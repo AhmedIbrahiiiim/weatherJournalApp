@@ -9,4 +9,4 @@
 - open the terminal
 - run (npm i express) & (npm i cors)
 - run (node server.js)
-- go to [http://localhost:4500]
+- go to [http://localhost:4500](http://localhost:4500)
