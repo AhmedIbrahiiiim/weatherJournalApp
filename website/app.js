@@ -16,19 +16,22 @@ btn.addEventListener("click", gen);
 function gen() {
   let today = new Date();
   let data = {
+    // to get the date in just dd/mm/yyyy
     date:
-      today.getFullYear() +
+      today.getDate() +
       "-" +
       (today.getMonth() + 1) +
       "-" +
-      today.getDate(),
+      today.getFullYear(),
+    // top get the zip input from the user
     zipCode: zip.value,
+    // top get the feeling input from the user
     content: feeling.value,
   };
   // Send Data To The API
   getZipCodeInformation(data.zipCode)
     .then(function (zipInfos) {
-      // if City Not Found It Will Show an Alert
+      // if City Not Found It Will Show an Alert Of The Message That Was Received From The API
       if (zipInfos.cod != 200) {
         return alert(zipInfos.message);
       } else {
@@ -53,12 +56,13 @@ async function postDataToServer(data) {
     method: "POST",
     body: JSON.stringify(data),
   });
+  // to Update The Page With The New Infos & if Not It Will Return an Alert of Not Successful
   try {
     res
       .json()
       .then(function (data) {
         if (res.ok) {
-          updatePage(); // update page now
+          updatePage(); // update UI now
         } else {
           alert(`Process Is Not Successful`);
         }
@@ -71,6 +75,7 @@ async function postDataToServer(data) {
 // Update Page Function
 async function updatePage() {
   let res = await fetch(`${apiUrl}all`);
+  // All The Changes on The HTML of The Data Received From The API
   try {
     res.json().then((data) => {
       date.innerHTML = `Date is: <span style="font-weight: 700;">${data.date}</span>`;
