@@ -77,7 +77,7 @@ async function updatePage() {
   let res = await fetch(`${apiUrl}all`);
   // All The Changes on The HTML of The Data Received From The API
   try {
-    res.json().then((data) => {
+    res.json().then(function (data) {
       date.innerHTML = `Date is: <span style="font-weight: 700;">${data.date}</span>`;
       temp.innerHTML = `Temperature is: <span style="font-weight: 700;">${data.temp}</span> <span style="font-weight: bold;">&deg;</span><span style="font-weight: 400">C</span>`;
       content.innerHTML = `My feeling is: <span style="font-weight: 700;">${data.content}</span>`;
