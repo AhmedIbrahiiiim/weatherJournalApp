@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Cairo", sans-serif;
+}
+input {
+  border: none;
+}
+body {
+  font-family: "Cairo", sans-serif;
+  height: 100vh;
+  background-color: #eee;
+}
+#app {
+  width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.holder {
+  display: flex;
+  flex-direction: column;
+}
+.holder.headline {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+.holder label {
+  margin-left: 10px;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 600;
+}
+.feel button {
+  width: 140px;
+  margin: 20px 0;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(0 188 212 / 62%);
+}
+.feel .bt {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.feel .bt button:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 5px 0px rgb(0 0 0 / 20%);
+}
+.holder.entry {
+  height: 170px;
+  background-color: white;
+}
+.holder.entry .title {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+input[type="text"],
+textarea,
+.holder.entry {
+  padding: 10px;
+  border: 2px solid rgb(0 0 0 / 20%);
+  border-radius: 8px;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+::placeholder,
+:-ms-input-placeholder,
+::-ms-input-placeholder {
+  color: black;
+}
