@@ -62,7 +62,7 @@ async function postDataToServer(data) {
       .json()
       .then(function (data) {
         if (res.ok) {
-          updatePage(); // update UI now
+          updatePage(); // update Page now
         } else {
           alert(`Process Is Not Successful`);
         }
