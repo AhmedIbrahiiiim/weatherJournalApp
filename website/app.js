@@ -35,7 +35,7 @@ function gen() {
       if (zipInfos.cod != 200) {
         return alert(zipInfos.message);
       } else {
-        // getting the Temperature & post data to the server for saving it the display it for the user
+        // getting the Temperature & post data to the server for saving it then display it for the user
         data.temp = zipInfos.list[0].main.temp;
         postDataToServer(data);
       }
